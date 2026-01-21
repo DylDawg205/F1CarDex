@@ -33,11 +33,11 @@ artwork_size = [b - a for a, b in zip(*CORNERS)]
 # image viewer. There are options available to specify the ball or the special background,
 # use the "--help" flag to view all options.
 
-title_font = ImageFont.truetype(str(SOURCES_PATH / "ArsenicaTrial-Extrabold.ttf"), 170)
-capacity_name_font = ImageFont.truetype(str(SOURCES_PATH / "Bobby Jones Soft.otf"), 110)
-capacity_description_font = ImageFont.truetype(str(SOURCES_PATH / "OpenSans-Semibold.ttf"), 75)
-stats_font = ImageFont.truetype(str(SOURCES_PATH / "Bobby Jones Soft.otf"), 130)
-credits_font = ImageFont.truetype(str(SOURCES_PATH / "arial.ttf"), 40)
+title_font = ImageFont.truetype(str(SOURCES_PATH / "Titillium-Bold.otf"), 170)
+capacity_name_font = ImageFont.truetype(str(SOURCES_PATH / "Titillium-BoldUpright.otf"), 105)
+capacity_description_font = ImageFont.truetype(str(SOURCES_PATH / "Formula1-Bold_web_0.ttf"), 65)
+stats_font = ImageFont.truetype(str(SOURCES_PATH / "Formula1-Regular_web_0.ttf"), 100)
+credits_font = ImageFont.truetype(str(SOURCES_PATH / "Formula1-Regular_web_0.ttf"), 40)
 
 credits_color_cache = {}
 
@@ -73,7 +73,7 @@ def draw_card(
 
     draw = ImageDraw.Draw(image)
     draw.text(
-        (50, 20),
+        (50, 50),
         ball.short_name or ball.country,
         font=title_font,
         stroke_width=2,
@@ -108,7 +108,7 @@ def draw_card(
         )
 
     draw.text(
-        (320, 1670),
+        (320, 1695),
         str(ball_instance.health),
         font=stats_font,
         fill=ball_health,
@@ -116,7 +116,7 @@ def draw_card(
         stroke_fill=(0, 0, 0, 255),
     )
     draw.text(
-        (1120, 1670),
+        (1120, 1695),
         str(ball_instance.attack),
         font=stats_font,
         fill=(252, 194, 76, 255),
